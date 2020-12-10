@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const { findMax, sayHello} = require('../main');
+const { findMax, sayHello,addToCart} = require('../main');
 
 describe('findMax', ()=>{
     it('should find the largest number in an array', ()=>{
@@ -18,4 +18,14 @@ describe('sayHello',()=>{
   it('this function should return hello',()=>{
     expect(sayHello(), 'Hello');
   })
+})
+
+
+describe('addToCart', ()=>{
+  it('The shopping cart shoul contain 5 shower gels',()=>{
+    expect(addToCart("ShowerGel" , 5),5);
+  });
+  it('the shopping carts total price should equal 249.95',()=>{
+    expect(addToCart("ShowerGel" , 5),249.95);
+  });
 })

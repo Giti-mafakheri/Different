@@ -1,18 +1,3 @@
-
-//#########################################
-function findMax (array, largest=-Infinity) {
-  if (array.length === 0) {
-    return largest;
-  }
-  if (array[0] > largest) {
-    largest = array[0];
-  }
-  const rest = array.slice(1);
-  return findMax(rest, largest);
-}
-//##############################################
-function sayHello(){return 'Hello';}
-//##############################################
 let shoppingCart = [];
 let totalPrice = 0;
 let products =[
@@ -50,9 +35,5 @@ console.log(`total price is: ${totalPriceRounded}`);
   return (shoppingCart.length,totalPriceRounded);
 }
 
-//##############################################
-module.exports = {
-    findMax,
-    sayHello,
-    addToCart
-}
+addToCart("ShowerGel",5);
+addToCart("ShowerGel",3);

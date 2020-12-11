@@ -1,7 +1,5 @@
 const expect = require('chai').expect;
-const {addToCart} = require('../main');
-
-
+var {addToCart,EmptyShoppingCard} = require('../main.js');
 
 // Step 1: Add products to the shopping cart.
 // Given :
@@ -12,18 +10,16 @@ const {addToCart} = require('../main');
 // Then :
 // The shopping cart should contain 5 Shower Gels each with a unit price of 49.99
 // And the shopping cart’s total price should equal 249.95
-
-describe('addToCart', ()=>{
-  it('The shopping cart should contain 5 shower gels',()=>{
-   expect(addToCart("ShowerGel" , 5),6);
-  //  expect(addToCart("ShowerGel" , 5)).to.have.lengthOf(5);
+describe('main.addToCart', ()=>{
+  beforeEach(()=>{
+     EmptyShoppingCard();
   });
-  it('the shopping carts total price should equal 249.95',()=>{
-    expect(addToCart("ShowerGel" , 5),249.95);
+  it('The shopping cart should contain 5 shower gels And the shopping cart’s total price should equal 249.95',()=>{
+   var shoppingCart= addToCart("ShowerGel" , 5);
+   expect(shoppingCart[1]).to.equal(5);
+   expect(shoppingCart[0]).to.equal(249.95);
   });
-
 })
-
 // Step 2: Add additional products of the same type to the shopping cart.
 // Given :
 // An empty shopping cart
@@ -34,17 +30,19 @@ describe('addToCart', ()=>{
 // Then :
 // The shopping cart should contain 8 Shower Gels each with a unit price of 49.99
 // And the shopping cart’s total price should equal 399.92
-
 describe('addToCart', ()=>{
 
-  it('The shopping cart shoul contain 8 shower gels',()=>{
-    expect(addToCart("ShowerGel" , 5),addToCart("ShowerGel" , 5),8);
+  beforeEach(()=>{
+EmptyShoppingCard();
   });
-  it('the shopping carts total price should equal 249.95',()=>{
-    expect(addToCart("ShowerGel" , 5),addToCart("ShowerGel" , 5),249.95);
+  it('The shopping cart should contain 8 Shower Gels and And the shopping cart’s total price should equal 399.92 ',()=>{
+   addToCart("ShowerGel" , 5);
+    var shoppingCart=addToCart("ShowerGel" , 3);
+   expect(shoppingCart[1]).to.equal(8);
+   expect(shoppingCart[0]).to.equal(399.92);
   });
-
 })
+
 // Step 3: Calculate the tax rate of the shopping cart with multiple items
 // Given :
 // An empty shopping cart
@@ -59,3 +57,14 @@ describe('addToCart', ()=>{
 // And the shopping cart should contain 2 Deodorant each with a unit price of 99.99
 // And the total sales tax amount for the shopping cart should equal 37.50
 // And the shopping cart’s total price should equal 337.46
+describe('addToCart', ()=>{
+  beforeEach(()=>{
+EmptyShoppingCard();
+  });
+  it('The shopping cart should contain 8 Shower Gels and And the shopping cart’s total price should equal 399.92 ',()=>{
+   addToCart("ShowerGel" , 2);
+    var shoppingCart=addToCart("Deodorant" , 2);
+   expect(shoppingCart[2]).to.equal(37.50);
+   expect(shoppingCart[3]).to.equal(337.46);
+  });
+})

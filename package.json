@@ -5,11 +5,15 @@
   "main": "recursion.js",
   "scripts": {
     "test": "mocha"
+
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chai": "^4.2.0",
     "mocha": "^5.2.0"
+  },
+  "devDependencies": {
+    "nexe": "^3.3.7"
   }
 }

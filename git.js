@@ -1,4 +1,3 @@
-
 let shoppingCart = [];
 let totalPrice = 0;
 let products =[
@@ -30,7 +29,7 @@ function addToCart(item , number){
          shoppingCart.push(selectedProduct);
          calcTotalPrice();
        }
-
+debugger;
 let shoppingCartItemCounts = shoppingCart.length;
 let totalPriceRounded = Math.ceil(totalPrice*100)/100;
 let totalTax = totalPrice*0.125;
@@ -38,11 +37,40 @@ let finalPriceWithTax =totalPrice+totalTax;
 let totalPriceRoundedWithTax = Math.ceil(finalPriceWithTax*100)/100;
 let totalTaxRounded = Math.ceil(totalTax*100)/100;
 
-return [totalPriceRounded,shoppingCartItemCounts,totalTaxRounded,totalPriceRoundedWithTax];
+return [totalPriceRounded,shoppingCartItemCounts,totalTaxRounded,totalPriceRoundedWithTax,shoppingCart];
 }
 
-//##############################################
-module.exports = {
-    addToCart,
-    EmptyShoppingCard
-}
+addToCart("ShowerGel",5)
+
+
+
+
+// class shopping {
+//
+// constructor(){
+//   this.arr = [],
+//   this.totalPrice = 0,
+//   this.products = [
+//     {
+//       name: "ShowerGel",
+//       Price: 49.99
+//     },
+//     {
+//       name: "Deodorant",
+//       Price: 99.99
+//     }
+//   ]
+// }
+//
+//   addToCart(item , number){
+//     for (var i = 0; i < number; i++)
+//        {
+//          this.arr.push(item);
+//        }
+//
+//   }
+// }
+// let myshopping = new shopping();
+// myshopping.addToCart("farid",2);
+// console.log(myshopping.addToCart("milk",2));
+//     console.log(this.arr);

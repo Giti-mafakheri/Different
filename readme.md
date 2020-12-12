@@ -1,13 +1,13 @@
-![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
+# Shopping cart
+## The program has a main method that can be called multiple times for adding a shopping Item
 
-# Recursion Exercises
 
-Complete the functions written in the `recursion.js` file. 
+**To start testing the program with three test scenarios you have to do npm install and then npm run test.**
 
-You can automatically test your progress by running `npm install` inside this folder to install the automated testing libraries, then run `npm test` to see if your functions pass the test cases. You will have to add the necessary parameters to these functions as well, so you can reference the function's usage inside the test file to see how the tests expect the function to be called.
 
-> NOTE: the myGA lesson links out to a Codepen with a recursion exercise that's exactly the same as the one in the `recursion.js` file. When you take the myGA lesson, try to get as far as you can, knowing that we'll review the exercise in class.
 
-#### Optional Challenge
+## technologies
+ * JavaScript
+ * node.js
+ * mocha test
 
-The floodIt challenge asks you to write a recursive function in order to complete a jQuery based floodIt game. You only need to fill in one function in `app.js` in order to complete the game functionality. 
